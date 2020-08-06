@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">COVID19 INDIA</string>
+
+
+    <string name="label_confirmed">Confirmed</string>
+    <string name="label_active">Active</string>
+    <string name="label_recovered">Recovered</string>
+    <string name="label_deceased">Deceased</string>
+    <string name="india">INDIA</string>
+    <string name="check_cases">Check Cases</string>
 </resources>

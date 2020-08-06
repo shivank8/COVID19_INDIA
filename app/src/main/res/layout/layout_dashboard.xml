@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    app:layout_constraintHeight_percent=""
+    android:layout_width="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_bias="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/red_transparent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.49"
+            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintWidth_percent="0.45">
+
+            <TextView
+                style="@style/TextMedium"
+                android:text="@string/label_confirmed"
+                android:textColor="@color/red" />
+
+            <TextView
+                style="@style/TextSmall"
+                android:layout_width="wrap_content"
+                android:text="@{`+`+viewModel.stateListInfo.deltaConfirmed}"
+                android:textColor="@color/red" />
+
+            <TextView
+                style="@style/TextLarge"
+                android:text="@{Integer.toString(viewModel.stateListInfo.dailyConfirmed)}"
+                android:textColor="@color/red" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/blue_transparent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.49"
+            app:layout_constraintHorizontal_bias="0.92"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintWidth_percent="0.45">
+
+            <TextView
+
+                style="@style/TextMedium"
+                android:text="@string/label_active"
+                android:textColor="@color/blue"
+                android:textSize="18sp" />
+
+            <TextView
+                style="@style/TextSmall"
+                android:text="@{`+`+(viewModel.stateListInfo.deltaConfirmed - viewModel.stateListInfo.deltaRecovered - viewModel.stateListInfo.deltaDeceased)}"
+                android:textColor="@color/blue" />
+
+            <TextView
+                style="@style/TextLarge"
+                android:text="@{Integer.toString(viewModel.stateListInfo.dailyConfirmed - viewModel.stateListInfo.dailyRecovered - viewModel.stateListInfo.dailyDeceased)}"
+                android:textColor="@color/blue" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/green_transparent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.49"
+            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintWidth_percent="0.45">
+
+            <TextView
+                style="@style/TextMedium"
+                android:text="@string/label_recovered"
+                android:textColor="@color/green" />
+
+            <TextView
+                style="@style/TextSmall"
+                android:text="@{`+`+viewModel.stateListInfo.deltaRecovered}"
+                android:textColor="@color/green" />
+
+            <TextView
+                style="@style/TextLarge"
+                android:text="@{Integer.toString(viewModel.stateListInfo.dailyRecovered)}"
+                android:textColor="@color/green" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/gray_transparent"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.49"
+            app:layout_constraintHorizontal_bias="0.92"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintWidth_percent="0.45">
+
+            <TextView
+                style="@style/TextMedium"
+                android:text="@string/label_deceased"
+                android:textColor="@color/gray" />
+
+            <TextView
+                style="@style/TextSmall"
+                android:text="@{`+`+viewModel.stateListInfo.deltaDeceased}"
+                android:textColor="@color/gray" />
+
+            <TextView
+                style="@style/TextLarge"
+                android:text="@{Integer.toString(viewModel.stateListInfo.dailyDeceased)}"
+                android:textColor="@color/gray" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
